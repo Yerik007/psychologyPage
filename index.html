@@ -71,9 +71,9 @@
 			height: auto;
 		}
 		.p1b1,.p1b2{
-			 width: 35rem;
-			 height: auto;
-		 }
+			width: 35rem;
+			height: auto;
+		}
 
 		.p1box{
 			width: 215.46vh;
@@ -222,7 +222,7 @@
 			animation: moveRight 1s 1.5s forwards;
 		}
 
-		 .animate-moveRightDown {
+		.animate-moveRightDown {
 			animation: moveRightDown 1s 2s forwards;
 		}
 
@@ -440,12 +440,12 @@
 				z-index:3;
 			}
 			.p4p6{
-				 width: 46rem;
-				 right: 46%;
-				 top: 27%;
-				 position: absolute;
-				 z-index:3;
-			 }
+				width: 46rem;
+				right: 46%;
+				top: 27%;
+				position: absolute;
+				z-index:3;
+			}
 			.p4p7{
 				width: 40rem;
 				left: 2%;
@@ -454,12 +454,12 @@
 				z-index:4;
 			}
 			.p4p8{
-				 width: 40rem;
-				 left: 2%;
-				 top: 88%;
-				 position: absolute;
-				 z-index:4;
-			 }
+				width: 40rem;
+				left: 2%;
+				top: 88%;
+				position: absolute;
+				z-index:4;
+			}
 
 
 		}
@@ -593,30 +593,28 @@
 				z-index:2;
 			}
 		}
-	</style>
+		</style>
 
-</head>
-<script src="./vue.js"></script>
-<body>
+		</head>
+		<script src="./vue.js"></script>
+		<body>
 
 
-<div id="app">
+		<div id="app">
 
-	<div  class="container" id="container" >
+		<div  class="container" id="container" >
 		<div class=" section page" >
-			<transition>
-			<div class="p1box"  >
-				<div class="p1p1" ></div>
-				<div class="p1p2"></div>
-				<div class="p1p3"></div>
-				<img class="p1c1" src="img/p1/底层云.png" alt="云">
-				<img class="p1c2" src="img/p1/次层云.png" alt="云">
-				<img class="p1c3" src="img/p1/形状%201.png" alt="云">
-				<img class="p1b1" src="img/p1/鸽子1.png" alt="鸟">
-				<img class="p1b2" src="img/p1/鸽子1.png" alt="鸟">
-				<img class="p1s1" src="img/p1/大学生如何建立 良好人际关系.png" alt="字">
-			</div>
-			</transition>
+		<div class="p1box"  >
+		<div class="p1p1" ></div>
+		<div class="p1p2"></div>
+		<div class="p1p3"></div>
+		<img class="p1c1" src="img/p1/底层云.png" alt="云">
+		<img class="p1c2" src="img/p1/次层云.png" alt="云">
+		<img class="p1c3" src="img/p1/形状%201.png" alt="云">
+		<img class="p1b1" src="img/p1/鸽子1.png" alt="鸟">
+		<img class="p1b2" src="img/p1/鸽子1.png" alt="鸟">
+		<img class="p1s1" src="img/p1/大学生如何建立 良好人际关系.png" alt="字">
+		</div>
 		</div>
 		<div class=" section page" >
 			<div class="p2box">
@@ -698,6 +696,10 @@
 </body>
 
 <script>
+	window.onload = function() {
+		var loader = document.getElementById('loader');
+		loader.style.display = 'none';
+	};
 $(function(){
 	$('#container').fullpage()
 })
