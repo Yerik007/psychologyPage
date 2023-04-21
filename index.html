@@ -98,7 +98,7 @@
 				height: 100vh;
 				overflow: hidden;
 				z-index: 1;
-
+				animation: moveUp 1s 1s forwards;
 			}
 			.p1p2{
 				position: absolute;
@@ -112,6 +112,7 @@
 				height: 100vh;
 				overflow: hidden;
 				z-index: 3;
+				animation: moveUp 1s  forwards;
 			}
 			.p1p3{
 				position: absolute;
@@ -125,36 +126,42 @@
 				height: 100vh;
 				overflow: hidden;
 				z-index: 6;
+				animation: moveDown 1s  forwards;
 			}
 			.p1c1{
 				position: absolute;
 				top:25%;
 				left: 40%;
 				z-index: 1;
+				animation: moveRight 1s 1.5s forwards;
 			}
 			.p1c2{
 				position: absolute;
 				top:10%;
 				left: 36%;
 				z-index: 3; /* 修改此处的 z-index */
+				animation: moveRight 1s 1.5s forwards;
 			}
 			.p1c3{
 				position: absolute;
 				top:20%;
 				left: 55%;
 				z-index: 1; /* 修改此处的 z-index */
+				animation: moveRight 1s 1.5s forwards;
 			}
 			.p1b1{
 				position: absolute;
 				top:20%;
 				left: 10%;
 				z-index: 6; /* 修改此处的 z-index */
+				animation: moveRightDown 1s 2s forwards;
 			}
 			.p1b2{
 				position: absolute;
 				top:60%;
 				left: 75%;
 				z-index: 6; /* 修改此处的 z-index */
+				animation: moveRightDown 1s 2s forwards;
 			}
 			.p1s1{
 				width: 52rem;
@@ -162,6 +169,7 @@
 				top:36%;
 				left: 38%;
 				z-index: 6; /* 修改此处的 z-index */
+				animation: fadeIn 1s 2.5s forwards;
 			}
 		}
 		/* 动画定义 */
@@ -195,11 +203,11 @@
 		}
 
 		.p1p1, .p1p2, .p1p3, .p1c1, .p1c2, .p1c3, .p1b1, .p1b2, .p1s1 {
-			//opacity: 0;
+			opacity: 0;
 		}
 
 		.animate-moveUp {
-			animation: moveUp 1s forwards;
+			animation: moveUp 1s  forwards;
 		}
 
 		.animate-moveUp1 {
@@ -596,8 +604,9 @@
 
 	<div  class="container" id="container" >
 		<div class=" section page" >
-			<div class="p1box">
-				<div class="p1p1"></div>
+			<transition>
+			<div class="p1box"  >
+				<div class="p1p1" ></div>
 				<div class="p1p2"></div>
 				<div class="p1p3"></div>
 				<img class="p1c1" src="img/p1/底层云.png" alt="云">
@@ -607,6 +616,7 @@
 				<img class="p1b2" src="img/p1/鸽子1.png" alt="鸟">
 				<img class="p1s1" src="img/p1/大学生如何建立 良好人际关系.png" alt="字">
 			</div>
+			</transition>
 		</div>
 		<div class=" section page" >
 			<div class="p2box">
@@ -696,7 +706,7 @@ $(function(){
 		el: '#app',
 		data() {
 			return {
-
+				isShow: false,
 			};
 		},
 
