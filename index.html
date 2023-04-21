@@ -11,14 +11,10 @@
 
 
 	<title>上下翻页示例</title>
-	<style lang="less">
-		html, body {
-			height: 100%;
-			overflow: auto;
-		}
+	<style >
+
 
 		.container {
-			min-height: 100%;
 			position: relative;
 		}
 		html {
@@ -39,7 +35,11 @@
 			top: 0;
 			transition: transform 0.4s;
 		}
-
+		.fp-tableCell{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 		.page {
 
 			background-image: url("./img/p4/颜色填充 1.png");
@@ -86,91 +86,92 @@
 			position: relative;
 			z-index: 1;
 
-			.p1p1{
-				position: absolute;
-				background-image: url("./img/p1/底层.png");
-				//background-size: cover;
-				background-size: auto 100% ;
-				background-repeat: no-repeat;
-				background-position: center center;
-				//display: inline;
-				width: 100%;
-				height: 100vh;
-				overflow: hidden;
-				z-index: 1;
-				animation: moveUp 1s 1s forwards;
-			}
-			.p1p2{
-				position: absolute;
-				background-image: url("./img/p1/次层.png");
-				//background-size: cover;
-				background-size: auto 100% ;
-				background-repeat: no-repeat;
-				background-position: center center;
-				//display: inline;
-				width: 100%;
-				height: 100vh;
-				overflow: hidden;
-				z-index: 3;
-				animation: moveUp 1s  forwards;
-			}
-			.p1p3{
-				position: absolute;
-				background-image: url("./img/p1/顶层.png");
-				//background-size: cover;
-				background-size: auto 100% ;
-				background-repeat: no-repeat;
-				background-position: center center;
-				//display: inline;
-				width: 100%;
-				height: 100vh;
-				overflow: hidden;
-				z-index: 6;
-				animation: moveDown 1s  forwards;
-			}
-			.p1c1{
-				position: absolute;
-				top:25%;
-				left: 40%;
-				z-index: 1;
-				animation: moveRight 1s 1.5s forwards;
-			}
-			.p1c2{
-				position: absolute;
-				top:10%;
-				left: 36%;
-				z-index: 3; /* 修改此处的 z-index */
-				animation: moveRight 1s 1.5s forwards;
-			}
-			.p1c3{
-				position: absolute;
-				top:20%;
-				left: 55%;
-				z-index: 1; /* 修改此处的 z-index */
-				animation: moveRight 1s 1.5s forwards;
-			}
-			.p1b1{
-				position: absolute;
-				top:20%;
-				left: 10%;
-				z-index: 6; /* 修改此处的 z-index */
-				animation: moveRightDown 1s 2s forwards;
-			}
-			.p1b2{
-				position: absolute;
-				top:60%;
-				left: 75%;
-				z-index: 6; /* 修改此处的 z-index */
-				animation: moveRightDown 1s 2s forwards;
-			}
-			.p1s1{
-				width: 52rem;
-				position: absolute;
-				top:36%;
-				left: 38%;
-				z-index: 6; /* 修改此处的 z-index */
-				animation: fadeIn 1s 2.5s forwards;
-			}
+
+		}
+		.p1p1{
+			position: absolute;
+			background-image: url("./img/p1/底层.png");
+			//background-size: cover;
+			background-size: auto 100% ;
+			background-repeat: no-repeat;
+			background-position: center center;
+			//display: inline;
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+			z-index: 1;
+			animation: moveUp 1s 1s forwards;
+		}
+		.p1p2{
+			position: absolute;
+			background-image: url("./img/p1/次层.png");
+			//background-size: cover;
+			background-size: auto 100% ;
+			background-repeat: no-repeat;
+			background-position: center center;
+			//display: inline;
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+			z-index: 3;
+			animation: moveUp 1s  forwards;
+		}
+		.p1p3{
+			position: absolute;
+			background-image: url("./img/p1/顶层.png");
+			//background-size: cover;
+			background-size: auto 100% ;
+			background-repeat: no-repeat;
+			background-position: center center;
+			//display: inline;
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+			z-index: 6;
+			animation: moveDown 1s  forwards;
+		}
+		.p1c1{
+			position: absolute;
+			top:25%;
+			left: 40%;
+			z-index: 1;
+			animation: moveRight 1s 1.5s forwards;
+		}
+		.p1c2{
+			position: absolute;
+			top:10%;
+			left: 36%;
+			z-index: 3; /* 修改此处的 z-index */
+			animation: moveRight 1s 1.5s forwards;
+		}
+		.p1c3{
+			position: absolute;
+			top:20%;
+			left: 55%;
+			z-index: 1; /* 修改此处的 z-index */
+			animation: moveRight 1s 1.5s forwards;
+		}
+		.p1b1{
+			position: absolute;
+			top:20%;
+			left: 10%;
+			z-index: 6; /* 修改此处的 z-index */
+			animation: moveRightDown 1s 2s forwards;
+		}
+		.p1b2{
+			position: absolute;
+			top:60%;
+			left: 75%;
+			z-index: 6; /* 修改此处的 z-index */
+			animation: moveRightDown 1s 2s forwards;
+		}
+		.p1s1{
+			width: 52rem;
+			position: absolute;
+			top:36%;
+			left: 38%;
+			z-index: 6; /* 修改此处的 z-index */
+			animation: fadeIn 1s 2.5s forwards;
 		}
 		/* 动画定义 */
 		@keyframes moveUp {
@@ -264,92 +265,92 @@
 			justify-content: center;
 			align-items: center;
 			position: relative;
-			.p2sbox {
-				position: absolute;
-				display: flex;
-				justify-content: flex-start;
-				padding-left: 10rem;
-				padding-bottom: 3rem;
-				align-items: center;
-				width: 150rem;
-				height: 75rem;
-				background-image: url("./img/p2/搜索.png");
-				background-size: 100% auto;
-				background-repeat: no-repeat;
-				background-position: center center;
-				transition: transform 1s;
-				z-index: 8;
 
-			}
-			.p2p1{
-				height: 100vh;
-				position: absolute;
-				z-index: 6;
-				//opacity: 0;
-			}
-			.p2p2{
-				height: 100vh;
-				position: absolute;
-				z-index: 3;
-			}
-			.p2p3{
-				height: 100vh;
-				position: absolute;
-				z-index: 4;
-			}
-			.p2p4{
-				height: 100vh;
-				position: absolute;
-				z-index: 2;
-			}
-			.p2p5{
-				height: 100vh;
-				position: absolute;
-				z-index: 1;
-			}
-			.p2p6{
-				position: absolute;
-				width:20rem;
-				top: 12%;
-				left: 11%;
-				z-index: 7;
-			}
-			.p2p7{
-				width: 35rem;
-				position: absolute;
-				bottom: 2%;
-				right: 1%;
-				z-index: 7;
-			}
-			.p2s1{
-				width: 80rem;
-				position: absolute;
-				top: 10.111%;
-				z-index: 6;
-			}
-			.p2s2{
-				width: 6rem;
-				position: absolute;
-				top: 38%;
-				left: 23.7%;
-				z-index: 6;
-			}
-			.p2s3{
-				width: 6rem;
-				position: absolute;
-				top: 36%;
-				z-index: 6;
-			}
-			.p2s4{
-				width: 6rem;
-				position: absolute;
-				top: 42%;
-				right:23.7% ;
-				z-index: 6;
-			}
 
 		}
+		.p2sbox {
+			position: absolute;
+			display: flex;
+			justify-content: flex-start;
+			padding-left: 10rem;
+			padding-bottom: 3rem;
+			align-items: center;
+			width: 150rem;
+			height: 75rem;
+			background-image: url("./img/p2/搜索.png");
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center center;
+			transition: transform 1s;
+			z-index: 8;
 
+		}
+		.p2p1{
+			height: 100vh;
+			position: absolute;
+			z-index: 6;
+			//opacity: 0;
+		}
+		.p2p2{
+			height: 100vh;
+			position: absolute;
+			z-index: 3;
+		}
+		.p2p3{
+			height: 100vh;
+			position: absolute;
+			z-index: 4;
+		}
+		.p2p4{
+			height: 100vh;
+			position: absolute;
+			z-index: 2;
+		}
+		.p2p5{
+			height: 100vh;
+			position: absolute;
+			z-index: 1;
+		}
+		.p2p6{
+			position: absolute;
+			width:20rem;
+			top: 12%;
+			left: 11%;
+			z-index: 7;
+		}
+		.p2p7{
+			width: 35rem;
+			position: absolute;
+			bottom: 2%;
+			right: 1%;
+			z-index: 7;
+		}
+		.p2s1{
+			width: 80rem;
+			position: absolute;
+			top: 10.111%;
+			z-index: 6;
+		}
+		.p2s2{
+			width: 6rem;
+			position: absolute;
+			top: 38%;
+			left: 23.7%;
+			z-index: 6;
+		}
+		.p2s3{
+			width: 6rem;
+			position: absolute;
+			top: 36%;
+			z-index: 6;
+		}
+		.p2s4{
+			width: 6rem;
+			position: absolute;
+			top: 42%;
+			right:23.7% ;
+			z-index: 6;
+		}
 
 
 		.p2box.small .p2sbox {
@@ -365,47 +366,47 @@
 			justify-content: center;
 			align-items: center;
 			position: relative;
-			.p3p1{
-				height: 100vh;
-				position: absolute;
-				z-index: 1;
-			}
-			.p3p2{
-				height: 100vh;
-				position: absolute;
-				z-index: 1;
-			}
-			.p3p3{
-				width: 40rem;
-				right: 1%;
-				top: 12%;
-				position: absolute;
-				z-index: 1;
-			}
-			.p3p4{
-				width: 120rem;
-				top: 28%;
-				left: 2%;
-				position: absolute;
-				z-index: 1;
-			}
-			.p3p5{
-				width: 60rem;
-				top: 45%;
-				left: 2%;
-				position: absolute;
-				z-index: 1;
-			}
-			.p3p6{
-				width: 70rem;
-				right: 5%;
-				bottom: 0;
-				position: absolute;
-				z-index: 1;
-			}
+
 
 		}
-
+		.p3p1{
+			height: 100vh;
+			position: absolute;
+			z-index: 1;
+		}
+		.p3p2{
+			height: 100vh;
+			position: absolute;
+			z-index: 1;
+		}
+		.p3p3{
+			width: 40rem;
+			right: 1%;
+			top: 12%;
+			position: absolute;
+			z-index: 1;
+		}
+		.p3p4{
+			width: 120rem;
+			top: 28%;
+			left: 2%;
+			position: absolute;
+			z-index: 1;
+		}
+		.p3p5{
+			width: 60rem;
+			top: 45%;
+			left: 2%;
+			position: absolute;
+			z-index: 1;
+		}
+		.p3p6{
+			width: 70rem;
+			right: 5%;
+			bottom: 0;
+			position: absolute;
+			z-index: 1;
+		}
 		.p4box{
 			background-image: url("./img/p4/颜色填充 1.png");
 			width: 215.46vh;
@@ -415,56 +416,56 @@
 			justify-content: center;
 			align-items: center;
 			position: relative;
-			.p4p2{
-				height: 100vh;
-				position: absolute;
-				z-index: 2;
-			}
-			.p4p3{
-				height: 100vh;
-				position: absolute;
-				z-index:3;
-			}
-			.p4p4{
-				width: 25rem;
-				right: 34%;
-				top: 55%;
-				position: absolute;
-				z-index:3;
-			}
-			.p4p5{
-				width: 8rem;
-				right: 38%;
-				top: 42%;
-				position: absolute;
-				z-index:3;
-			}
-			.p4p6{
-				width: 46rem;
-				right: 46%;
-				top: 27%;
-				position: absolute;
-				z-index:3;
-			}
-			.p4p7{
-				width: 40rem;
-				left: 2%;
-				top: 62%;
-				position: absolute;
-				z-index:4;
-			}
-			.p4p8{
-				width: 40rem;
-				left: 2%;
-				top: 88%;
-				position: absolute;
-				z-index:4;
-			}
+
 
 
 		}
 
-
+		.p4p2{
+			height: 100vh;
+			position: absolute;
+			z-index: 2;
+		}
+		.p4p3{
+			height: 100vh;
+			position: absolute;
+			z-index:3;
+		}
+		.p4p4{
+			width: 25rem;
+			right: 34%;
+			top: 55%;
+			position: absolute;
+			z-index:3;
+		}
+		.p4p5{
+			width: 8rem;
+			right: 38%;
+			top: 42%;
+			position: absolute;
+			z-index:3;
+		}
+		.p4p6{
+			width: 46rem;
+			right: 46%;
+			top: 27%;
+			position: absolute;
+			z-index:3;
+		}
+		.p4p7{
+			width: 40rem;
+			left: 2%;
+			top: 62%;
+			position: absolute;
+			z-index:4;
+		}
+		.p4p8{
+			width: 40rem;
+			left: 2%;
+			top: 88%;
+			position: absolute;
+			z-index:4;
+		}
 
 		.p5box{
 			background-image: url("./img/p5/颜色填充 1.png");
@@ -475,74 +476,74 @@
 			justify-content: center;
 			align-items: center;
 			position: relative;
-			.p5p1{
-				width: 100%;
-				bottom: 0;
-				position: absolute;
-				z-index:1;
-			}
-			.p5p2{
-				width: 100%;
-				bottom: 0;
-				position: absolute;
-				z-index:3;
-			}
-			.p5p3{
-				width: 100%;
-				bottom: 0;
-				position: absolute;
-				z-index:4;
-			}
-			.p5p4{
-				width: 100%;
-				top: 0;
-				position: absolute;
-				z-index:2;
-			}
-			.p5p5{
-				width: 40rem;
-				top: 8%;
-				left:5%;
-				position: absolute;
-				z-index:2;
-			}
-			.p5p6{
-				width: 20rem;
-				top: 5%;
-				right: 5%;
-				position: absolute;
-				z-index:2;
-			}
-			.p5p7{
-				width: 140rem;
-				top: 10%;
-				left: 20%;
-				position: absolute;
-				z-index:2;
-			}
-			.p5p8{
-				width: 20rem;
-				left: 10%;
-				bottom: 18%;
-				position: absolute;
-				z-index:3;
-			}
-			.p5p9{
-				width: 20rem;
-				right: 25%;
-				bottom: 22%;
-				position: absolute;
-				z-index:5;
-			}
-			.p5s1{
-				width: 90rem;
-				right: 32%;
-				bottom: 35%;
-				position: absolute;
-				z-index:2;
-			}
-		}
 
+		}
+		.p5p1{
+			width: 100%;
+			bottom: 0;
+			position: absolute;
+			z-index:1;
+		}
+		.p5p2{
+			width: 100%;
+			bottom: 0;
+			position: absolute;
+			z-index:3;
+		}
+		.p5p3{
+			width: 100%;
+			bottom: 0;
+			position: absolute;
+			z-index:4;
+		}
+		.p5p4{
+			width: 100%;
+			top: 0;
+			position: absolute;
+			z-index:2;
+		}
+		.p5p5{
+			width: 40rem;
+			top: 8%;
+			left:5%;
+			position: absolute;
+			z-index:2;
+		}
+		.p5p6{
+			width: 20rem;
+			top: 5%;
+			right: 5%;
+			position: absolute;
+			z-index:2;
+		}
+		.p5p7{
+			width: 140rem;
+			top: 10%;
+			left: 20%;
+			position: absolute;
+			z-index:2;
+		}
+		.p5p8{
+			width: 20rem;
+			left: 10%;
+			bottom: 18%;
+			position: absolute;
+			z-index:3;
+		}
+		.p5p9{
+			width: 20rem;
+			right: 25%;
+			bottom: 22%;
+			position: absolute;
+			z-index:5;
+		}
+		.p5s1{
+			width: 90rem;
+			right: 32%;
+			bottom: 35%;
+			position: absolute;
+			z-index:2;
+		}
 		.p6box{
 			background-image: url("./img/p6/bg.png");
 			width: 215.46vh;
@@ -552,46 +553,47 @@
 			justify-content: center;
 			align-items: center;
 			position: relative;
-			.p6p1{
-				height: 100vh;
-				position: absolute;
-				z-index:1;
-			}
-			.p6p2{
-				width: 35rem;
-				//right: 32%;
-				bottom: 2%;
-				position: absolute;
-				z-index:3;
-			}
-			.p6p3{
-				width: 65rem;
-				//right: 32%;
-				top:10%;
-				position: absolute;
-				z-index:2;
-			}
-			.p6p4{
-				width: 65rem;
-				right: 0;
-				top:10%;
-				position: absolute;
-				z-index:2;
-			}
-			.p6p5{
-				width: 65rem;
-				left: 2%;
-				bottom:10%;
-				position: absolute;
-				z-index:2;
-			}
-			.p6p6{
-				width: 65rem;
-				left: 2%;
-				bottom:15%;
-				position: absolute;
-				z-index:2;
-			}
+
+		}
+		.p6p1{
+			height: 100vh;
+			position: absolute;
+			z-index:1;
+		}
+		.p6p2{
+			width: 35rem;
+			//right: 32%;
+			bottom: 2%;
+			position: absolute;
+			z-index:3;
+		}
+		.p6p3{
+			width: 65rem;
+			//right: 32%;
+			top:10%;
+			position: absolute;
+			z-index:2;
+		}
+		.p6p4{
+			width: 65rem;
+			right: 0;
+			top:10%;
+			position: absolute;
+			z-index:2;
+		}
+		.p6p5{
+			width: 65rem;
+			left: 2%;
+			bottom:10%;
+			position: absolute;
+			z-index:2;
+		}
+		.p6p6{
+			width: 65rem;
+			left: 2%;
+			bottom:15%;
+			position: absolute;
+			z-index:2;
 		}
 		</style>
 
