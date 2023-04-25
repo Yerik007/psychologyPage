@@ -56,9 +56,16 @@ html {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  font-size: 5rem;
+  font-size: 3rem;
   justify-content: center;
   align-items: center;
+
+}
+.tips{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
 }
 .p1c1,
 .p1c2,
@@ -770,6 +777,9 @@ html {
 .p5p8a {
   animation: MoveLeft 1s 0.8s forwards;
 }
+.p5p9a{
+	animation: MoveLeft 1.5s 0.8s forwards;
+}
 .p5p5a,
 .p5p8a {
   animation: MoveLeft 0.7s 0.8s forwards;
@@ -777,6 +787,21 @@ html {
 .p5p6a,
 .p5s1a {
   animation: FadeIn 1s 1.8s forwards;
+	transform: rotate(0deg);
+}
+@keyframes Rotate {
+	from {
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+	to {
+		transform: rotate(360deg);
+		opacity: 1;
+	}
+}
+.rotate {
+	animation: Rotate infinite 10s;
+	transform-origin: center;
 }
 .p6box {
   background-image: url("./img/p6/bg.png");
@@ -916,16 +941,16 @@ html {
   animation: ShowText 0.8s 0.5s forwards;
 }
 .n2a {
-  animation: ShowText 0.8s 0.8s forwards;
+  animation: ShowText 0.8s 0.9s forwards;
 }
 .n3a {
-  animation: ShowText 1s 1.1s forwards;
+  animation: ShowText 1s 1.5s forwards;
 }
 .n4a {
-  animation: ShowText 0.8s 1.4s forwards;
+  animation: ShowText 0.8s 1.7s forwards;
 }
 .n5a {
-  animation: ShowText 1.2s 1.7s forwards;
+  animation: ShowText 1.2s 1.8s forwards;
 }
 .n6a {
   animation: ShowText 1.2s 2s forwards;
@@ -1004,18 +1029,18 @@ html {
 				<img class="p3p2" src="./img/p3/烟雾.png" alt="烟雾">
 				<img class="p3p3" src="./img/p3/飞机.png" alt="飞机">
 				<img class="p3p4" src="./img/p3/文字1.png" alt="文字">
-				<img class="p3p5" src="./img/p3/文字2.png" alt="文字">
+				<img class="p3p5" src="./img/p3/p3文字2.png" alt="文字">
 				<img class="p3p6" src="./img/p3/房子.png" alt="房子">
 			</div>
 		</div>
 		<div class=" section page" >
 			<div class="p4box">
-				<img class="p4p1" src="./img/p4/底层.png" alt="底层">
+				<img class="p4p1" src="./img/p4/p4底层.png" alt="底层">
 				<img class="p4p2" src="./img/p4/次层.png" alt="次层">
 				<img class="p4p3" src="./img/p4/顶层.png" alt="顶层">
 				<img class="p4p4" src="./img/p4/笑脸.png" alt="笑脸">
 				<img class="p4p5" src="./img/p4/组%201.png" alt="人">
-				<img class="p4p6" src="./img/p4/文字.png" alt="文字">
+				<img class="p4p6" src="./img/p4/p4文字.png" alt="文字">
 				<img class="p4p7" src="./img/p4/Hello, World_.png" alt="文字H">
 				<img class="p4p8" src="./img/p4/横线.png" alt="横线">
 			</div>
@@ -1031,7 +1056,7 @@ html {
 				<img class="p5p7" src="./img/p5/瓶子.png" alt="瓶子">
 				<img class="p5p8" src="./img/p5/红色船.png" alt="小船">
 				<img class="p5p9" src="./img/p5/紫色船.png" alt="小船">
-				<img class="p5s1" src="./img/p5/文字.png" alt="文字">
+				<img class="p5s1" src="./img/p5/p5文字.png" alt="文字">
 			</div>
 		</div>
 		<div class=" section page" >
@@ -1044,11 +1069,11 @@ html {
 				<img class="p6p6" src="./img/p6/文字.png" alt="文字">
 			</div>
 		</div>
-		<div class=" section page" >
+		<div class=" section page active" >
 				<div class="p7box">
 					<div class="n1 sss r1">这是</div>
 					<div class="n2 sss r2">我们</div>
-					<div class="n3 sss l1">完全</div>
+					<div class="n3 sss l1">自己</div>
 					<div class="n4 sss l2">的</div>
 					<div class="n5 sss r1">原创</div>
 					<div class="n6 sss r2">作品</div>
@@ -1067,8 +1092,8 @@ html {
 			</audio>
 	<!-- 横屏提示 -->
 	<div class="landscape-tip" >
-		请将设备横屏以获得最佳体验。
-		安卓微信扫一扫请到浏览器打开
+		<img class="tips" src="./img/landscape-tip.png" alt="提示">
+
 	</div>
 </div>
 
@@ -1238,6 +1263,9 @@ $(function(){
 				$('.p5p4').addClass('p5p4a');
 				$('.p5p5').addClass('p5p5a');
 				$('.p5p6').addClass('p5p6a');
+				setTimeout(()=>{
+					$('.p5p6').addClass('rotate');
+				},2500)
 				$('.p5p7').addClass('p5p7a');
 				$('.p5p8').addClass('p5p8a');
 				$('.p5p9').addClass('p5p9a');
@@ -1249,7 +1277,8 @@ $(function(){
 				$('.p5p3').removeClass('p5p3a');
 				$('.p5p4').removeClass('p5p4a');
 				$('.p5p5').removeClass('p5p5a');
-				$('.p5p6').removeClass('p5p6a');
+				$('.p5p6').removeClass('p5p6a rotate');
+
 				$('.p5p7').removeClass('p5p7a');
 				$('.p5p8').removeClass('p5p8a');
 				$('.p5p9').removeClass('p5p9a');
@@ -1302,6 +1331,10 @@ $(function(){
 				$('.n12').removeClass('n12a');
 				$('.n13').removeClass('n13a');
 }
+		},
+		afterResize: function(){
+			console.log('afterResize')
+			$.fn.fullpage.reBuild();
 		}
 
 
